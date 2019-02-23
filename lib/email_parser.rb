@@ -4,18 +4,15 @@
 # or whitespace (' ').
 
 class EmailParser
-  attr_accessor :email
+  attr_accessor :emails
   
   def initialize(emails)
-    @email = emails
+    @emails = emails
   end
 
   def parse
-    #separate emails by comma or space
-    email_arr = @email.split(/[, ]/).uniq
-    #remove empty emails
-    email_arr.reject! {|value| value.empty?}
-    #return only unique emails
-    email_arr
+    array = @emails.split(/[, ]/).uniq # separate emails by comma or space
+    array.reject! {|value| value.empty?} # remove empty emails
+    array  # return array of unique emails
   end
 end
