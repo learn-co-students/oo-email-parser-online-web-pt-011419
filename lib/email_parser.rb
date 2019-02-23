@@ -11,8 +11,8 @@ class EmailParser
   end
 
   def parse
-    array = @emails.split(/[, ]/).uniq # separate emails by comma or space
-    array.reject!{|email| email.empty?} # remove empty emails
+    array = @emails.split(/[, ]/).uniq # separate emails by comma or space # and remove duplicates 
+    array.reject!{|email| email.empty?} # delete empty emails
     array  # return array of unique emails
   end
 end
