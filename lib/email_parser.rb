@@ -13,12 +13,13 @@ class EmailParser
 
   def initialize(emails)
     @emails = emails
+    @@emailList.clear
   end
 
   def parse
     parsed = @emails.gsub(/[ ,]/, ' ').split(" ")
     parsed.each do |em|
-      binding.pry
+      ##binding.pry
       @@emailList << em if !@@emailList.include?(em)
     end
     @@emailList
